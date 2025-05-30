@@ -416,8 +416,8 @@ GrantManager.prototype.validateToken = function validateToken (token, expectedTy
   return new Promise((resolve, reject) => {
     if (!token) {
       reject(new Error('invalid token (missing)'))
-    } else if (token.isExpired()) {
-      reject(new Error('invalid token (expired)'))
+    //} else if (token.isExpired()) {
+    //  reject(new Error('invalid token (expired)'))
     } else if (!token.signed) {
       reject(new Error('invalid token (not signed)'))
     } else if (token.content.typ !== expectedType) {
